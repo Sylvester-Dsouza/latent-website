@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, FileText, Scale, AlertTriangle, Users, Gavel } from "lucide-react";
 
 export default function TermsOfServicePage() {
@@ -73,7 +73,7 @@ export default function TermsOfServicePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  By accessing and using Latent Security's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                  By accessing and using Latent Security&apos;s services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
                 <p className="text-muted-foreground">
                   These terms apply to all visitors, users, and others who access or use our cybersecurity services.
