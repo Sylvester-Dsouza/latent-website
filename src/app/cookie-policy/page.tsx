@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { Shield, FileText, Cookie, Settings, BarChart, Target } from "lucide-react";
 
 export default function CookiePolicyPage() {
@@ -247,6 +248,9 @@ export default function CookiePolicyPage() {
                 </p>
                 <div className="mt-4 space-y-2">
                   <p className="text-muted-foreground">
+                    <strong>Phone:</strong> +971 4 388 2014
+                  </p>
+                  <p className="text-muted-foreground">
                     <strong>Email:</strong> info@latentinfotech.com
                   </p>
                   <p className="text-muted-foreground">
@@ -259,6 +263,18 @@ export default function CookiePolicyPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection 
+        title="Questions About Our Cookie Policy?"
+        description="If you have any questions about how we use cookies or need clarification on our privacy practices, we're here to help."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="/contact"
+        secondaryButtonText="View Privacy Policy"
+        secondaryButtonHref="/privacy-policy"
+        backgroundVariant="muted"
+        className="py-20"
+      />
     </div>
   );
 }

@@ -16,6 +16,7 @@ import {
   Building
 } from "lucide-react";
 import Link from "next/link";
+import { CTASection } from "@/components/ui/cta-section";
 
 export default function AboutPage() {
   const stats = [
@@ -304,27 +305,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold mb-6">Ready to Partner With Us?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join hundreds of organizations that trust LATENT INFORMATION TECHNOLOGY to protect their digital assets.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-                Start Your Security Journey
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button size="lg" variant="outline" className="border-border hover:bg-muted px-8">
-                Explore Our Services
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready to Partner With Us?"
+        description="Join hundreds of organizations that trust LATENT INFORMATION TECHNOLOGY to protect their digital assets."
+        secondaryButtonText="Explore Our Services"
+        secondaryButtonHref="/services"
+        backgroundVariant="muted"
+        className="py-24"
+      />
     </div>
   );
 }

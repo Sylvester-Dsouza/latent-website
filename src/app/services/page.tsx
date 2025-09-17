@@ -27,6 +27,7 @@ import {
   Award
 } from "lucide-react";
 import Link from "next/link";
+import { CTASection } from "@/components/ui/cta-section";
 
 export default function ServicesPage() {
   const [mounted, setMounted] = useState(false);
@@ -52,9 +53,7 @@ export default function ServicesPage() {
         "Planning and scoping with defined goals and rules of engagement",
         "Reconnaissance using WHOIS, Shodan, and social engineering",
         "Vulnerability identification with Nmap, Burp Suite, and Metasploit",
-        "Active exploitation to gain unauthorized access",
-        "Post-exploitation impact assessment and lateral movement",
-        "Comprehensive reporting with actionable remediation steps"
+        "Active exploitation to gain unauthorized access"
       ],
       benefits: [
         "Identify exploitable weaknesses before attackers do",
@@ -80,9 +79,7 @@ export default function ServicesPage() {
         "Planning and scoping with stakeholder alignment",
         "Discovery and scanning using Nessus, Qualys, OpenVAS",
         "Analysis and prioritization using CVSS scores",
-        "Detailed reporting with risk ratings and remediation",
-        "Remediation support and validation through re-scanning",
-        "Network, host, application, and cloud-based assessments"
+        "Detailed reporting with risk ratings and remediation"
       ],
       benefits: [
         "Identify vulnerabilities before exploitation",
@@ -108,9 +105,7 @@ export default function ServicesPage() {
         "Planning and preparation with legal compliance",
         "Evidence collection and preservation using forensic tools",
         "Analysis and examination of digital artifacts",
-        "Detailed reporting with chain of custody documentation",
-        "Expert testimony and legal support",
-        "Incident reconstruction and timeline analysis"
+        "Detailed reporting with chain of custody documentation"
       ],
       benefits: [
         "Legal-grade evidence collection",
@@ -136,9 +131,7 @@ export default function ServicesPage() {
         "Planning and assessment with stakeholder engagement",
         "Analysis and strategy development using industry frameworks",
         "Implementation support with project management",
-        "Monitoring and optimization with continuous improvement",
-        "Security architecture design and review",
-        "Compliance consulting for GDPR, PCI-DSS, ISO 27001"
+        "Monitoring and optimization with continuous improvement"
       ],
       benefits: [
         "Strategic security roadmap development",
@@ -259,14 +252,7 @@ export default function ServicesPage() {
                 <div className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''} animate-in fade-in-50 slide-in-from-bottom-8 duration-700`}>
                   {/* Content */}
                   <div className={!isEven ? 'lg:col-start-2' : ''}>
-                    <div className="flex items-center space-x-3 mb-4 group">
-                      <div className={`p-3 rounded-lg bg-gradient-to-br ${service.gradient} text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg`}>
-                        <IconComponent className="h-6 w-6 transition-transform duration-300" />
-                      </div>
-                      <Badge variant="outline" className="text-xs transition-all duration-300 group-hover:border-primary/50">
-                        Core Service
-                      </Badge>
-                    </div>
+
                     
                     <h3 className="text-2xl lg:text-3xl font-bold mb-2">
                       {service.title}
@@ -285,7 +271,7 @@ export default function ServicesPage() {
                         Key Features
                       </h4>
                       <div className="grid md:grid-cols-2 gap-2">
-                        {service.features.slice(0, 6).map((feature, idx) => (
+                        {service.features.slice(0, 4).map((feature, idx) => (
                           <div key={idx} className="flex items-start space-x-2 text-sm group/feature hover:bg-muted/30 p-2 rounded-md transition-all duration-200" style={{animationDelay: `${idx * 100}ms`}}>
                             <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0 transition-transform duration-200 group-hover/feature:scale-110" />
                             <span className="transition-colors duration-200 group-hover/feature:text-foreground">{feature}</span>
@@ -389,31 +375,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-blue-500/10 to-purple-500/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-              Ready to Secure Your Business?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Get started with a comprehensive security assessment and discover how we can protect your organization.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-cyber text-white" asChild>
-                <Link href="/contact">
-                  Start Your Security Journey
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/contact">
-                  Schedule Consultation
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

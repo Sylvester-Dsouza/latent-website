@@ -42,6 +42,7 @@ const footerSections = [
 ];
 
 const contactInfo = [
+  { icon: Phone, text: "+971 4 388 2014", href: "tel:+97143882014" },
   { icon: Mail, text: "info@latentinfotech.com", href: "mailto:info@latentinfotech.com" },
   { icon: MapPin, text: "Office 308, 1143 Business Center, Port Saeed, Dubai, UAE", href: "#" },
 ];

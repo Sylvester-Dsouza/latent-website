@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { 
   Shield, 
   Lock, 
@@ -367,34 +368,15 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         </div>
       </section>
 
-      {/* CTA Section - Modern Gradient */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="flex items-center justify-center mb-4">
-            <Star className="h-6 w-6 text-white mr-2" />
-            <h2 className="text-2xl lg:text-3xl font-bold text-white">
-              Ready to Get Started?
-            </h2>
-          </div>
-          <p className="text-lg mb-6 max-w-2xl mx-auto text-white/90">
-            Contact us today to discuss your {service.title.toLowerCase()} needs and get a customized solution.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-slate-900 hover:bg-slate-100" asChild>
-              <Link href="/contact">
-                Get Started Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900" asChild>
-              <Link href="/contact">
-                Schedule Consultation
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection 
+        title="Ready to Get Started?"
+        description={`Contact us today to discuss your ${service.title.toLowerCase()} needs and get a customized solution.`}
+        primaryButtonText="Get Started Today"
+        secondaryButtonText="Schedule Consultation"
+        secondaryButtonHref="/contact"
+        className="py-16"
+      />
     </div>
   );
 }

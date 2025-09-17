@@ -21,6 +21,7 @@ import {
   ArrowRight,
   Zap
 } from "lucide-react";
+import { CTASection } from "@/components/ui/cta-section";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -52,6 +53,11 @@ export default function ContactPage() {
       icon: MapPin,
       title: "Address",
       content: "Office 308, 1143 Business Center\nPort Saeed, Dubai, UAE"
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      content: "+971 4 388 2014"
     },
     {
       icon: Mail,
@@ -235,26 +241,13 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-            Ready to Secure Your Business?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Don't wait for a security breach. Contact us today for a comprehensive security assessment.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-border hover:bg-muted px-8">
-              <Mail className="w-4 h-4 mr-2" />
-              Email Us
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        description="Don't wait for a security breach. Contact us today for a comprehensive security assessment."
+        primaryButtonText="Call Now"
+        secondaryButtonText="Email Us"
+        backgroundVariant="muted"
+        className="py-20"
+      />
     </div>
   );
 }

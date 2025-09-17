@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { 
   Shield, 
   Target, 
@@ -201,19 +202,67 @@ export default function SecurityConsultingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-background/50 backdrop-blur-sm border-y border-border/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Visual Metrics Section */}
+      <section className="relative py-16 bg-gradient-to-r from-purple-950/10 via-background to-pink-950/10 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-pulse shadow-lg shadow-purple-500/10" />
+          <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-pink-500/20 rounded-full blur-xl animate-pulse delay-1000 shadow-lg shadow-pink-500/10" />
+          <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-purple-400/30 rounded-full blur-sm animate-bounce delay-500" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Service Metrics
+              </span>
+            </h2>
+            <p className="text-muted-foreground">Consulting excellence indicators</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.value}
+              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-purple-500/20 hover:border-pink-500/40 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                {/* Animated background glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="relative text-center space-y-3">
+                  {/* Icon based on index */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300">
+                    {index === 0 && <Users className="w-6 h-6 text-purple-400" />}
+                    {index === 1 && <Award className="w-6 h-6 text-pink-400" />}
+                    {index === 2 && <TrendingUp className="w-6 h-6 text-purple-400" />}
+                    {index === 3 && <BookOpen className="w-6 h-6 text-pink-400" />}
+                  </div>
+                  
+                  {/* Value */}
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    {stat.value}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Progress indicator */}
+                  <div className="w-full bg-muted/30 rounded-full h-1 mt-3">
+                    <div 
+                      className="bg-gradient-to-r from-purple-400 to-pink-400 h-1 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${88 + index * 3}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
-              </div>
+                
+                {/* Floating accent */}
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+              </Card>
             ))}
           </div>
         </div>
@@ -324,28 +373,14 @@ export default function SecurityConsultingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-950/20 via-background to-pink-950/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Ready to Transform Your Security?
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get expert security consulting to develop a comprehensive strategy and strengthen your security posture.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Start Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 rounded-lg font-semibold border-purple-500/20 hover:border-purple-500/40 hover:bg-purple-500/5 transition-all duration-300">
-              Contact Expert
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready to Transform Your Security?"
+        description="Get expert security consulting to develop a comprehensive strategy and strengthen your security posture."
+        primaryButtonText="Start Consultation"
+        secondaryButtonText="Contact Expert"
+        secondaryButtonHref="/contact"
+        className="py-20"
+      />
     </div>
   );
 }

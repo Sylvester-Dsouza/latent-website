@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { Shield, FileText, Scale, AlertTriangle, Users, Gavel } from "lucide-react";
 
 export default function TermsOfServicePage() {
@@ -213,6 +214,9 @@ export default function TermsOfServicePage() {
                 </p>
                 <div className="mt-4 space-y-2">
                   <p className="text-muted-foreground">
+                    <strong>Phone:</strong> +971 4 388 2014
+                  </p>
+                  <p className="text-muted-foreground">
                     <strong>Email:</strong> info@latentinfotech.com
                   </p>
                   <p className="text-muted-foreground">
@@ -225,6 +229,18 @@ export default function TermsOfServicePage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection 
+        title="Ready to Get Started?"
+        description="By using our services, you agree to these terms. Have questions about our service agreement? We're here to help clarify any concerns."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="/contact"
+        secondaryButtonText="View Our Services"
+        secondaryButtonHref="/services"
+        backgroundVariant="muted"
+        className="py-20"
+      />
     </div>
   );
 }

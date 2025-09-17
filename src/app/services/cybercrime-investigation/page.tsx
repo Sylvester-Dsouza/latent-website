@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { 
   Shield, 
   Eye, 
@@ -200,19 +201,67 @@ export default function ManagedSecurityPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-background/50 backdrop-blur-sm border-y border-border/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Visual Metrics Section */}
+      <section className="relative py-16 bg-gradient-to-r from-green-950/10 via-background to-emerald-950/10 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-green-500/20 rounded-full blur-xl animate-pulse shadow-lg shadow-green-500/10" />
+          <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-emerald-500/20 rounded-full blur-xl animate-pulse delay-1000 shadow-lg shadow-emerald-500/10" />
+          <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-green-400/30 rounded-full blur-sm animate-bounce delay-500" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Service Metrics
+              </span>
+            </h2>
+            <p className="text-muted-foreground">Managed security performance indicators</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.value}
+              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-green-500/20 hover:border-emerald-500/40 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                {/* Animated background glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="relative text-center space-y-3">
+                  {/* Icon based on index */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl group-hover:from-green-500/30 group-hover:to-emerald-500/30 transition-all duration-300">
+                    {index === 0 && <Monitor className="w-6 h-6 text-green-400" />}
+                    {index === 1 && <TrendingUp className="w-6 h-6 text-emerald-400" />}
+                    {index === 2 && <Clock className="w-6 h-6 text-green-400" />}
+                    {index === 3 && <Shield className="w-6 h-6 text-emerald-400" />}
+                  </div>
+                  
+                  {/* Value */}
+                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    {stat.value}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Progress indicator */}
+                  <div className="w-full bg-muted/30 rounded-full h-1 mt-3">
+                    <div 
+                      className="bg-gradient-to-r from-green-400 to-emerald-400 h-1 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${85 + index * 4}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
-              </div>
+                
+                {/* Floating accent */}
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+              </Card>
             ))}
           </div>
         </div>
@@ -323,28 +372,14 @@ export default function ManagedSecurityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-950/20 via-background to-emerald-950/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              Ready for Managed Security?
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get started with comprehensive managed security services and protect your organization 24/7.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 rounded-lg font-semibold border-green-500/20 hover:border-green-500/40 hover:bg-green-500/5 transition-all duration-300">
-              Contact Expert
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready for Managed Security?"
+        description="Get started with comprehensive managed security services and protect your organization 24/7."
+        primaryButtonText="Schedule Consultation"
+        secondaryButtonText="Contact Expert"
+        secondaryButtonHref="/contact"
+        className="py-20"
+      />
     </div>
   );
 }

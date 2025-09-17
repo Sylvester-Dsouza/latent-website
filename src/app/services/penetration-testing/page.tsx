@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { CTASection } from '@/components/ui/cta-section';
 
 export default function PenetrationTestingPage() {
   const features = [
@@ -180,17 +181,67 @@ export default function PenetrationTestingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-gradient-to-r from-red-950/10 via-background to-orange-950/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+      {/* Visual Metrics Section */}
+      <section className="relative py-16 bg-gradient-to-r from-red-950/10 via-background to-orange-950/10 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-red-500/20 rounded-full blur-xl animate-pulse shadow-lg shadow-red-500/10" />
+          <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-orange-500/20 rounded-full blur-xl animate-pulse delay-1000 shadow-lg shadow-orange-500/10" />
+          <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-red-400/30 rounded-full blur-sm animate-bounce delay-500" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Service Metrics
+              </span>
+            </h2>
+            <p className="text-muted-foreground">Real-time performance indicators</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-                  {stat.value}
+              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-red-500/20 hover:border-orange-500/40 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                {/* Animated background glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="relative text-center space-y-3">
+                  {/* Icon based on index */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl group-hover:from-red-500/30 group-hover:to-orange-500/30 transition-all duration-300">
+                    {index === 0 && <Target className="w-6 h-6 text-red-400" />}
+                    {index === 1 && <CheckCircle className="w-6 h-6 text-orange-400" />}
+                    {index === 2 && <Clock className="w-6 h-6 text-red-400" />}
+                    {index === 3 && <Star className="w-6 h-6 text-orange-400" />}
+                  </div>
+                  
+                  {/* Value */}
+                  <div className="text-3xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    {stat.value}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Progress indicator */}
+                  <div className="w-full bg-muted/30 rounded-full h-1 mt-3">
+                    <div 
+                      className="bg-gradient-to-r from-red-400 to-orange-400 h-1 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${85 + index * 5}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </div>
+                
+                {/* Floating accent */}
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-red-500/30 to-orange-500/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+              </Card>
             ))}
           </div>
         </div>
@@ -310,28 +361,14 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-red-950/10 via-background to-orange-950/10">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-              Ready to Secure
-            </span>
-            <span className="text-foreground"> Your Infrastructure?</span>
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get started with our comprehensive penetration testing services and identify vulnerabilities before they become threats.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all duration-300">
-              Schedule Assessment
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-red-500/20 hover:border-red-500/40 hover:bg-red-500/5">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready to Secure Your Infrastructure?"
+        description="Get started with our comprehensive penetration testing services and identify vulnerabilities before they become threats."
+        primaryButtonText="Schedule Assessment"
+        secondaryButtonText="Contact Us"
+        secondaryButtonHref="/contact"
+        className="py-16 sm:py-20 lg:py-24"
+      />
     </div>
   );
 }

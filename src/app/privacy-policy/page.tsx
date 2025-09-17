@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { Shield, FileText, Lock, Eye, Database, UserCheck } from "lucide-react";
 
 export default function PrivacyPolicyPage() {
@@ -170,7 +171,7 @@ export default function PrivacyPolicyPage() {
                   <li>Right to withdraw consent at any time</li>
                 </ul>
                 <p className="text-muted-foreground mt-4">
-                  To exercise these rights, please contact us at info@latentinfotech.com
+                  To exercise these rights, please contact us at +971 4 388 2014 or info@latentinfotech.com
                 </p>
               </CardContent>
             </Card>
@@ -187,6 +188,9 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="mt-4 space-y-2">
                   <p className="text-muted-foreground">
+                    <strong>Phone:</strong> +971 4 388 2014
+                  </p>
+                  <p className="text-muted-foreground">
                     <strong>Email:</strong> info@latentinfotech.com
                   </p>
                   <p className="text-muted-foreground">
@@ -199,6 +203,18 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection 
+        title="Protecting Your Privacy is Our Priority"
+        description="Have questions about how we handle your data? We're committed to transparency and would be happy to discuss our privacy practices with you."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="/contact"
+        secondaryButtonText="View Security Policy"
+        secondaryButtonHref="/security-policy"
+        backgroundVariant="muted"
+        className="py-20"
+      />
     </div>
   );
 }

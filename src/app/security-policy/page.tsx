@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CTASection } from "@/components/ui/cta-section";
 import { Shield, Lock, Eye, AlertTriangle, FileText, Users, Server, Key } from "lucide-react";
 
 export default function SecurityPolicyPage() {
@@ -317,6 +318,9 @@ export default function SecurityPolicyPage() {
                 </p>
                 <div className="mt-4 space-y-2">
                   <p className="text-muted-foreground">
+                    <strong>Phone:</strong> +971 4 388 2014
+                  </p>
+                  <p className="text-muted-foreground">
                     <strong>Email:</strong> info@latentinfotech.com
                   </p>
                   <p className="text-muted-foreground">
@@ -329,6 +333,18 @@ export default function SecurityPolicyPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection 
+        title="Secure Your Business Today"
+        description="Ready to implement enterprise-grade security measures? Let our experts help you build a comprehensive security framework that protects your organization."
+        primaryButtonText="Get Security Assessment"
+        primaryButtonHref="/contact"
+        secondaryButtonText="View Our Services"
+        secondaryButtonHref="/services"
+        backgroundVariant="muted"
+        className="py-20"
+      />
     </div>
   );
 }
