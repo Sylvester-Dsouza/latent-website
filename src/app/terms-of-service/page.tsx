@@ -5,13 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CTASection } from "@/components/ui/cta-section";
 import { Shield, FileText, Scale, AlertTriangle, Users, Gavel } from "lucide-react";
 
+
 export default function TermsOfServicePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-background" />
+        
+        {/* Light background image - with unique positioning for terms of service */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-8 transform rotate-12 scale-110"
+          style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+        />
+        
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-cyan/5" />
         
         {/* Grid Pattern */}
@@ -20,15 +29,15 @@ export default function TermsOfServicePage() {
         {/* Floating Particles */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-primary/30 rounded-full animate-pulse" />
-          <div className="absolute top-40 right-20 w-1 h-1 bg-cyan/40 rounded-full animate-pulse delay-1000" />
+          <div className="absolute top-40 right-20 w-1 h-1 bg-muted-foreground/40 rounded-full animate-pulse delay-1000" />
           <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/20 rounded-full animate-pulse delay-2000" />
-          <div className="absolute bottom-20 right-10 w-1 h-1 bg-cyan/30 rounded-full animate-pulse delay-3000" />
+          <div className="absolute bottom-20 right-10 w-1 h-1 bg-muted-foreground/30 rounded-full animate-pulse delay-3000" />
         </div>
         
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         
-        <div className="relative max-w-4xl mx-auto text-center">
+        <div className="relative container mx-auto text-center">
           <Badge variant="outline" className="mb-6 border-primary/20 bg-primary/5 text-primary">
             <Scale className="w-4 h-4 mr-2" />
             Terms of Service
@@ -242,5 +251,6 @@ export default function TermsOfServicePage() {
         className="py-20"
       />
     </div>
+    </>
   );
 }

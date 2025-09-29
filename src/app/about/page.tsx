@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { CTASection } from "@/components/ui/cta-section";
 
+
 export default function AboutPage() {
   const stats = [
     { number: "500+", label: "Clients Protected", icon: Shield },
@@ -77,12 +78,20 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-cyan/5" />
+        
+        {/* Light background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-muted/5" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -90,15 +99,15 @@ export default function AboutPage() {
         {/* Floating Particles */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-primary/30 rounded-full animate-pulse" />
-          <div className="absolute top-40 right-20 w-1 h-1 bg-cyan/40 rounded-full animate-pulse delay-1000" />
+          <div className="absolute top-40 right-20 w-1 h-1 bg-muted-foreground/40 rounded-full animate-pulse delay-1000" />
           <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/20 rounded-full animate-pulse delay-2000" />
-          <div className="absolute bottom-20 right-10 w-1 h-1 bg-cyan/30 rounded-full animate-pulse delay-3000" />
+          <div className="absolute bottom-20 right-10 w-1 h-1 bg-muted-foreground/30 rounded-full animate-pulse delay-3000" />
         </div>
         
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         
-        <div className="relative max-w-4xl mx-auto text-center">
+        <div className="relative container mx-auto text-center">
           <Badge variant="outline" className="mb-6 border-primary/20 bg-primary/5 text-primary">
             <Shield className="w-4 h-4 mr-2" />
             About LATENT
@@ -313,6 +322,7 @@ export default function AboutPage() {
         backgroundVariant="muted"
         className="py-24"
       />
-    </div>
+      </div>
+    </>
   );
 }

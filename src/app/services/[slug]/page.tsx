@@ -202,7 +202,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   const IconComponent = service.icon;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-20">
       {/* Hero Section - Smaller and Modern */}
       <section className="relative py-12 lg:py-16 overflow-hidden">
         {/* Background Effects */}

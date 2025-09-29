@@ -27,6 +27,7 @@ import {
   Settings
 } from "lucide-react";
 
+
 export default function ManagedSecurityPage() {
   const [mounted, setMounted] = useState(false);
   
@@ -125,7 +126,8 @@ export default function ManagedSecurityPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <>
+      <div className="flex flex-col min-h-screen bg-background pt-20">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24 bg-background overflow-hidden">
         {/* Animated Background Elements */}
@@ -189,7 +191,7 @@ export default function ManagedSecurityPage() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Start Security Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -322,10 +324,10 @@ export default function ManagedSecurityPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((step, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/20">
-                  <span className="text-white font-bold text-lg">{step.step}</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-primary/80 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/20">
+                  <span className="text-primary-foreground font-bold text-lg">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-green-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -381,5 +383,6 @@ export default function ManagedSecurityPage() {
         className="py-20"
       />
     </div>
+    </>
   );
 }

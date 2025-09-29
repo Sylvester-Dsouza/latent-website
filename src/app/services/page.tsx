@@ -28,6 +28,17 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { CTASection } from "@/components/ui/cta-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cybersecurity Services - Latent Security",
+  description: "Comprehensive cybersecurity services including penetration testing, vulnerability assessments, security consulting, and cybercrime investigation.",
+  openGraph: {
+    title: "Cybersecurity Services - Latent Security",
+    description: "Comprehensive cybersecurity services including penetration testing, vulnerability assessments, security consulting, and cybercrime investigation.",
+    url: "https://latentsecurity.com/services",
+  },
+};
 
 export default function ServicesPage() {
   const [mounted, setMounted] = useState(false);
@@ -48,7 +59,7 @@ export default function ServicesPage() {
       subtitle: "Controlled Simulated Attacks",
       description: "A controlled, simulated attack to evaluate the security of IT infrastructure, applications, or human processes by exploiting vulnerabilities to assess their real-world impact.",
       icon: Shield,
-      gradient: "from-red-500 to-orange-500",
+      gradient: "from-primary/20 to-primary/10",
       features: [
         "Planning and scoping with defined goals and rules of engagement",
         "Reconnaissance using WHOIS, Shodan, and social engineering",
@@ -74,7 +85,7 @@ export default function ServicesPage() {
       subtitle: "Comprehensive Security Scanning",
       description: "Systematic identification and evaluation of security vulnerabilities in systems, networks, and applications using automated tools and manual techniques.",
       icon: Search,
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "from-primary/20 to-primary/10",
       features: [
         "Planning and scoping with stakeholder alignment",
         "Discovery and scanning using Nessus, Qualys, OpenVAS",
@@ -100,7 +111,7 @@ export default function ServicesPage() {
       subtitle: "Digital Forensics & Investigation",
       description: "Comprehensive investigation of cyber incidents using advanced digital forensics techniques to identify perpetrators and gather evidence for legal proceedings.",
       icon: Search,
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "from-primary/20 to-primary/10",
       features: [
         "Planning and preparation with legal compliance",
         "Evidence collection and preservation using forensic tools",
@@ -126,7 +137,7 @@ export default function ServicesPage() {
       subtitle: "Strategic Security Advisory",
       description: "Comprehensive cybersecurity consulting services providing strategic guidance, risk assessment, and tailored security solutions to strengthen your organization's security posture.",
       icon: Users,
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-primary/20 to-primary/10",
       features: [
         "Planning and assessment with stakeholder engagement",
         "Analysis and strategy development using industry frameworks",
@@ -153,47 +164,54 @@ export default function ServicesPage() {
       title: "Cloud Security Assessment",
       description: "Comprehensive evaluation of cloud infrastructure security across AWS, Azure, and GCP platforms.",
       icon: Cloud,
-      color: "text-blue-600"
+      color: "text-primary"
     },
     {
       title: "Security Auditing",
       description: "Thorough evaluation of security controls and compliance with industry standards and frameworks.",
       icon: FileCheck,
-      color: "text-green-600"
+      color: "text-primary"
     },
     {
       title: "Incident Response",
       description: "24/7 rapid response and recovery services for security incidents and data breaches.",
       icon: AlertTriangle,
-      color: "text-red-600"
+      color: "text-primary"
     },
     {
       title: "Security Training",
       description: "Comprehensive security awareness training programs and phishing simulation exercises.",
       icon: Award,
-      color: "text-purple-600"
+      color: "text-primary"
     },
     {
       title: "Risk Management",
       description: "Strategic risk assessment and management services using quantitative and qualitative methods.",
       icon: Target,
-      color: "text-orange-600"
+      color: "text-primary"
     },
     {
       title: "Compliance Services",
       description: "Ensure compliance with GDPR, PCI-DSS, ISO 27001, SOX, and other regulatory requirements.",
       icon: CheckCircle,
-      color: "text-indigo-600"
+      color: "text-primary"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-20">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-cyan/5" />
+        
+        {/* Light background image - positioned at top-left */}
+        <div 
+          className="absolute top-0 left-0 w-1/2 h-full bg-cover bg-top bg-no-repeat opacity-15"
+          style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-muted/5" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -201,9 +219,9 @@ export default function ServicesPage() {
         {/* Floating Particles */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-primary/30 rounded-full animate-pulse" />
-          <div className="absolute top-40 right-20 w-1 h-1 bg-cyan/40 rounded-full animate-pulse delay-1000" />
+          <div className="absolute top-40 right-20 w-1 h-1 bg-muted-foreground/40 rounded-full animate-pulse delay-1000" />
           <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/20 rounded-full animate-pulse delay-2000" />
-          <div className="absolute bottom-20 right-10 w-1 h-1 bg-cyan/30 rounded-full animate-pulse delay-3000" />
+          <div className="absolute bottom-20 right-10 w-1 h-1 bg-muted-foreground/30 rounded-full animate-pulse delay-3000" />
         </div>
         
         {/* Overlay Gradient */}
@@ -273,7 +291,7 @@ export default function ServicesPage() {
                       <div className="grid md:grid-cols-2 gap-2">
                         {service.features.slice(0, 4).map((feature, idx) => (
                           <div key={idx} className="flex items-start space-x-2 text-sm group/feature hover:bg-muted/30 p-2 rounded-md transition-all duration-200" style={{animationDelay: `${idx * 100}ms`}}>
-                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0 transition-transform duration-200 group-hover/feature:scale-110" />
+                            <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-hover/feature:scale-110" />
                             <span className="transition-colors duration-200 group-hover/feature:text-foreground">{feature}</span>
                           </div>
                         ))}
@@ -282,7 +300,7 @@ export default function ServicesPage() {
 
                     <div className="flex gap-3">
                       <Link href={`/services/${service.id}`}>
-                        <Button className={`group bg-gradient-to-r ${service.gradient} text-white hover:opacity-90 hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden`}>
+                        <Button className={`group bg-gradient-to-r ${service.gradient} text-foreground hover:opacity-90 hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden`}>
                           <span className="relative z-10">Learn More</span>
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
                           <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -319,7 +337,7 @@ export default function ServicesPage() {
                           <ul className="space-y-2">
                             {service.benefits.map((benefit, idx) => (
                               <li key={idx} className="flex items-start space-x-2 text-sm">
-                                <ArrowRight className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                                <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span>{benefit}</span>
                               </li>
                             ))}

@@ -5,13 +5,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CTASection } from "@/components/ui/cta-section";
 import { Shield, Lock, Eye, AlertTriangle, FileText, Users, Server, Key } from "lucide-react";
 
+
 export default function SecurityPolicyPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 pt-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-background" />
+        
+        {/* Light background image - with unique positioning for security policy page */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-12 transform rotate-6 scale-110"
+          style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+        />
+        
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-cyan/5" />
         
         {/* Grid Pattern */}
@@ -20,9 +29,9 @@ export default function SecurityPolicyPage() {
         {/* Floating Particles */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-primary/30 rounded-full animate-pulse" />
-          <div className="absolute top-40 right-20 w-1 h-1 bg-cyan/40 rounded-full animate-pulse delay-1000" />
+          <div className="absolute top-40 right-20 w-1 h-1 bg-muted-foreground/40 rounded-full animate-pulse delay-1000" />
           <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/20 rounded-full animate-pulse delay-2000" />
-          <div className="absolute bottom-20 right-10 w-1 h-1 bg-cyan/30 rounded-full animate-pulse delay-3000" />
+          <div className="absolute bottom-20 right-10 w-1 h-1 bg-muted-foreground/30 rounded-full animate-pulse delay-3000" />
         </div>
         
         {/* Overlay Gradient */}
@@ -346,5 +355,6 @@ export default function SecurityPolicyPage() {
         className="py-20"
       />
     </div>
+    </>
   );
 }

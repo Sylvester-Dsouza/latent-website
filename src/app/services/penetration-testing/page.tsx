@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { CTASection } from '@/components/ui/cta-section';
 
+
 export default function PenetrationTestingPage() {
   const features = [
     {
@@ -105,11 +106,18 @@ export default function PenetrationTestingPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <>
+      <div className="flex flex-col min-h-screen bg-background pt-20">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24 bg-background overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
+          {/* Light background image - positioned at bottom-right */}
+          <div 
+            className="absolute bottom-0 right-0 w-1/2 h-3/4 bg-cover bg-bottom bg-no-repeat opacity-10"
+            style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+          />
+          
           {/* Base gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-background to-orange-950/20" />
           
@@ -169,7 +177,7 @@ export default function PenetrationTestingPage() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -305,7 +313,7 @@ export default function PenetrationTestingPage() {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 hover:border-red-500/20 bg-card/50 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center space-x-3 mb-2">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-bold">
                         {step.step}
                       </div>
                       <CardTitle className="text-lg">{step.title}</CardTitle>
@@ -370,5 +378,6 @@ export default function PenetrationTestingPage() {
         className="py-16 sm:py-20 lg:py-24"
       />
     </div>
+    </>
   );
 }

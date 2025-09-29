@@ -7,18 +7,9 @@ const footerSections = [
     title: "Services",
     links: [
       { name: "Penetration Testing", href: "/services/penetration-testing" },
-      { name: "Security Audits", href: "/services/security-audits" },
-      { name: "Compliance", href: "/services/compliance" },
-      { name: "Incident Response", href: "/services/incident-response" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { name: "Enterprise Security", href: "/solutions/enterprise" },
-      { name: "Cloud Security", href: "/solutions/cloud" },
-      { name: "Network Security", href: "/solutions/network" },
-      { name: "Application Security", href: "/solutions/application" },
+      { name: "Vulnerability Assessment", href: "/services/vulnerability-assessment" },
+      { name: "Security Consulting", href: "/services/security-consulting" },
+      { name: "Cybercrime Investigation", href: "/services/cybercrime-investigation" },
     ],
   },
   {
@@ -26,8 +17,7 @@ const footerSections = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Careers", href: "/careers" },
-      { name: "Blog", href: "/blog" },
-      { name: "Case Studies", href: "/case-studies" },
+      { name: "Contact", href: "/contact" },
     ],
   },
   {

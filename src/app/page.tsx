@@ -6,53 +6,41 @@ import { PulsingParticleBackground } from "@/components/ui/pulsing-particle-back
 import { CTASection } from "@/components/ui/cta-section";
 import { Shield, Lock, Eye, Zap, Users, Award, ArrowRight, Sparkles, AlertTriangle, TrendingUp, Building, CheckCircle, Clock, Globe, HelpCircle, ChevronDown } from "lucide-react";
 
+
 export default function Home() {
   return (
-    <div className="flex flex-col relative">
-      {/* Global Pulsing Particle Background */}
-      <PulsingParticleBackground />
+    <>
+      <div className="flex flex-col relative">
+        {/* Global Pulsing Particle Background */}
+        <PulsingParticleBackground />
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-background overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-background to-purple-950/20" />
+          {/* Light background image with increased opacity */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
+            style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+          />
+          
+          {/* Very light overlay to blend with theme */}
+          <div className="absolute inset-0 bg-background/10 z-10" />
           
           {/* Animated grid pattern */}
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
-          
-          {/* Radial gradients for depth */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.15),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse z-20" />
           
           {/* Floating particles */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 z-30">
             {/* Large glowing orbs */}
-            <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse shadow-2xl shadow-blue-500/10" />
-            <div className="absolute top-3/4 right-1/4 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-2xl shadow-purple-500/10" />
-            <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-cyan-500/20 rounded-full blur-2xl animate-pulse delay-500 shadow-2xl shadow-cyan-500/10" />
-            <div className="absolute bottom-20 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-cyan-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
+            <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-muted/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute top-3/4 right-1/4 w-32 h-32 bg-muted/10 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-muted/10 rounded-full blur-2xl animate-pulse delay-500" />
+            <div className="absolute bottom-20 right-20 w-32 h-32 bg-muted/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-muted/5 rounded-full blur-xl animate-pulse delay-500"></div>
           </div>
           
-          {/* Network connection lines */}
-          <div className="absolute inset-0 opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 1000 1000" fill="none">
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.3" />
-                </linearGradient>
-              </defs>
-              <path d="M100,200 Q300,100 500,200 T900,200" stroke="url(#lineGradient)" strokeWidth="1" className="animate-pulse" />
-              <path d="M200,400 Q400,300 600,400 T1000,400" stroke="url(#lineGradient)" strokeWidth="1" className="animate-pulse delay-500" />
-              <path d="M50,600 Q250,500 450,600 T850,600" stroke="url(#lineGradient)" strokeWidth="1" className="animate-pulse delay-1000" />
-            </svg>
-          </div>
-          
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />
+          {/* Minimal overlay gradient for readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent z-40" />
         </div>
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,9 +49,9 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-6">
                 {/* Badge */}
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
-                  <Shield className="w-4 h-4 mr-2 text-blue-400" />
-                  <span className="text-blue-400 font-medium text-sm">Trusted by 500+ Organizations</span>
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted/20 border border-muted/40">
+                  <Shield className="w-4 h-4 mr-2 text-primary" />
+                  <span className="text-primary font-medium text-sm">Trusted by 500+ Organizations</span>
                 </div>
                 
                 {/* Main Heading */}
@@ -72,7 +60,7 @@ export default function Home() {
                     Defend Your Digital
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
                     Future Today
                   </span>
                 </h1>
@@ -108,11 +96,11 @@ export default function Home() {
               {/* Trust Indicators */}
               <div className="flex items-center space-x-6 text-sm text-muted-foreground">
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                  <CheckCircle className="w-4 h-4 mr-2 text-primary" />
                   No credit card required
                 </div>
                 <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-2 text-blue-400" />
+                  <Clock className="w-4 h-4 mr-2 text-primary" />
                   Setup in minutes
                 </div>
               </div>
@@ -126,41 +114,41 @@ export default function Home() {
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                          <Shield className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+                          <Shield className="w-6 h-6 text-primary-foreground" />
                         </div>
                         <div>
                           <h3 className="font-bold text-foreground">Security Dashboard</h3>
                           <p className="text-sm text-muted-foreground">Real-time protection</p>
                         </div>
                       </div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                     </div>
 
                     {/* Security Metrics */}
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20">
+                      <div className="flex items-center justify-between p-4 bg-muted/20 rounded-xl border border-muted/40">
                         <div className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-400" />
+                          <CheckCircle className="w-5 h-5 text-primary" />
                           <span className="text-sm font-medium">Threat Detection</span>
                         </div>
-                        <span className="text-green-400 font-bold">Active</span>
+                        <span className="text-primary font-bold">Active</span>
                       </div>
                       
-                      <div className="flex items-center justify-between p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                      <div className="flex items-center justify-between p-4 bg-muted/20 rounded-xl border border-muted/40">
                         <div className="flex items-center space-x-3">
-                          <Eye className="w-5 h-5 text-blue-400" />
+                          <Eye className="w-5 h-5 text-primary" />
                           <span className="text-sm font-medium">Network Monitoring</span>
                         </div>
-                        <span className="text-blue-400 font-bold">Secured</span>
+                        <span className="text-primary font-bold">Secured</span>
                       </div>
                       
-                      <div className="flex items-center justify-between p-4 bg-purple-500/10 rounded-xl border border-purple-500/20">
+                      <div className="flex items-center justify-between p-4 bg-muted/20 rounded-xl border border-muted/40">
                         <div className="flex items-center space-x-3">
-                          <Lock className="w-5 h-5 text-purple-400" />
+                          <Lock className="w-5 h-5 text-primary" />
                           <span className="text-sm font-medium">Data Encryption</span>
                         </div>
-                        <span className="text-purple-400 font-bold">Protected</span>
+                        <span className="text-primary font-bold">Protected</span>
                       </div>
                     </div>
 
@@ -171,19 +159,19 @@ export default function Home() {
                         <span className="text-foreground font-medium">98%</span>
                       </div>
                       <div className="w-full bg-muted/30 rounded-full h-2">
-                        <div className="bg-gradient-to-r from-green-400 to-blue-400 h-2 rounded-full w-[98%] animate-pulse"></div>
+                        <div className="bg-primary h-2 rounded-full w-[98%] animate-pulse"></div>
                       </div>
                     </div>
                   </div>
                 </Card>
 
                 {/* Floating Cards */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-blue-500/20 flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-blue-400" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-muted/20 rounded-2xl backdrop-blur-sm border border-muted/40 flex items-center justify-center">
+                  <Zap className="w-8 h-8 text-primary" />
                 </div>
                 
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-green-500/20 to-cyan-500/20 rounded-2xl backdrop-blur-sm border border-green-500/20 flex items-center justify-center">
-                  <Award className="w-6 h-6 text-green-400" />
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-muted/20 rounded-2xl backdrop-blur-sm border border-muted/40 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-primary" />
                 </div>
               </div>
             </div>
@@ -199,9 +187,9 @@ export default function Home() {
         
         <div className="relative container mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-6">
-              <Shield className="w-4 h-4 mr-2 text-blue-400" />
-              <span className="text-blue-400 font-medium text-sm">Our Services 🔒</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted/20 border border-muted/40 mb-6">
+              <Shield className="w-4 h-4 mr-2 text-primary" />
+              <span className="text-primary font-medium text-sm">Our Services 🔒</span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight mb-6">
               Comprehensive Security Solutions
@@ -215,7 +203,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Shield className="h-8 w-8 text-blue-500" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Security Audits</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -227,7 +215,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Lock className="h-8 w-8 text-blue-500" />
+                  <Lock className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Penetration Testing</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -239,7 +227,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Eye className="h-8 w-8 text-blue-500" />
+                  <Eye className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Threat Monitoring</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -251,7 +239,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Zap className="h-8 w-8 text-blue-500" />
+                  <Zap className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Incident Response</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -263,7 +251,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Users className="h-8 w-8 text-blue-500" />
+                  <Users className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Security Training</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -275,7 +263,7 @@ export default function Home() {
             <Card className="group p-8 hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-primary/50 hover:scale-105 bg-gradient-to-br from-background to-muted/30">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted/50 rounded-2xl shadow-lg group-hover:shadow-lg transition-all duration-300">
-                  <Award className="h-8 w-8 text-blue-500" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Compliance</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -297,9 +285,9 @@ export default function Home() {
         
         <div className="relative container mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-6">
-              <Users className="w-4 h-4 mr-2 text-blue-400" />
-              <span className="text-blue-400 font-medium text-sm">Testimonials ⭐</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted/20 border border-muted/40 mb-6">
+              <Users className="w-4 h-4 mr-2 text-primary" />
+              <span className="text-primary font-medium text-sm">Testimonials ⭐</span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight mb-6">
               Trusted by Industry Leaders
@@ -557,8 +545,8 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-8">
-              <Sparkles className="w-4 h-4 mr-2 text-blue-400" />
-              <span className="text-blue-400 font-medium text-sm">Why Choose Us ✨</span>
+              <Sparkles className="w-4 h-4 mr-2 text-primary" />
+            <span className="text-primary font-medium text-sm">Why Choose Us ✨</span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight mb-8 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Advanced Security Features
@@ -845,18 +833,18 @@ export default function Home() {
               <Card className="relative p-8 border border-green-500/20 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-sm rounded-2xl">
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm">
                   <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="text-green-400 font-medium">ISO 27001 Certified</span>
+                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                    <span className="text-primary font-medium">ISO 27001 Certified</span>
                   </div>
                   <div className="w-px h-6 bg-border hidden sm:block"></div>
                   <div className="flex items-center">
-                     <CheckCircle className="w-5 h-5 text-blue-400 mr-3" />
-                     <span className="text-blue-400 font-medium">NIST Framework</span>
+                     <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                     <span className="text-primary font-medium">NIST Framework</span>
                    </div>
                    <div className="w-px h-6 bg-border hidden sm:block"></div>
                    <div className="flex items-center">
-                     <CheckCircle className="w-5 h-5 text-purple-400 mr-3" />
-                     <span className="text-purple-400 font-medium">Zero Trust Architecture</span>
+                     <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                     <span className="text-primary font-medium">Zero Trust Architecture</span>
                    </div>
                  </div>
                </Card>
@@ -977,6 +965,7 @@ export default function Home() {
         secondaryButtonHref="/about"
       />
 
-    </div>
+      </div>
+    </>
   );
 }
