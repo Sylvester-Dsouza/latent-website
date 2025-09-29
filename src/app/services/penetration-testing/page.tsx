@@ -107,49 +107,21 @@ export default function PenetrationTestingPage() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-background pt-20">
-      {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 bg-background overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          {/* Light background image - positioned at bottom-right */}
+      <div className="flex flex-col min-h-screen bg-background relative">
+        {/* Navigation + Hero Background Elements */}
+        <div className="absolute top-0 left-0 right-0 h-[calc(100vh)] z-0">
+          {/* Background image */}
           <div 
-            className="absolute bottom-0 right-0 w-1/2 h-3/4 bg-cover bg-bottom bg-no-repeat opacity-10"
-            style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+            style={{ backgroundImage: 'url(/Gradient-bg/bg2.jpg)' }}
           />
           
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-background to-orange-950/20" />
-          
-          {/* Animated grid pattern */}
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
-          
-          {/* Floating particles */}
-          <div className="absolute inset-0">
-            {/* Large glowing orbs */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-red-500/20 rounded-full blur-2xl animate-pulse shadow-2xl shadow-red-500/10" />
-            <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl animate-pulse delay-1000 shadow-2xl shadow-orange-500/10" />
-            <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-red-400/20 rounded-full blur-xl animate-pulse delay-500 shadow-2xl shadow-red-400/10" />
-            
-            {/* Medium particles */}
-            <div className="absolute top-1/5 left-3/4 w-6 h-6 bg-red-400/50 rounded-full blur-sm animate-bounce delay-200 shadow-lg shadow-red-400/20" />
-            <div className="absolute top-3/5 left-1/8 w-4 h-4 bg-orange-400/50 rounded-full blur-sm animate-bounce delay-800 shadow-lg shadow-orange-400/20" />
-            <div className="absolute bottom-1/5 right-1/8 w-8 h-8 bg-red-300/50 rounded-full blur-sm animate-bounce delay-1400 shadow-lg shadow-red-300/20" />
-            
-            {/* Small floating particles */}
-            <div className="absolute top-1/3 left-1/2 w-3 h-3 bg-red-400/60 rounded-full animate-bounce delay-300 shadow-md shadow-red-400/30" />
-            <div className="absolute top-2/3 left-1/5 w-2 h-2 bg-orange-400/60 rounded-full animate-bounce delay-700 shadow-md shadow-orange-400/30" />
-            <div className="absolute top-1/5 right-1/5 w-2 h-2 bg-red-300/60 rounded-full animate-bounce delay-1200 shadow-md shadow-red-300/30" />
-            
-            {/* Bright sparkle particles */}
-            <div className="absolute top-1/4 left-3/5 w-1 h-1 bg-white rounded-full animate-ping delay-100 shadow-lg shadow-white/50" />
-            <div className="absolute top-3/4 left-2/5 w-1 h-1 bg-white rounded-full animate-ping delay-1000 shadow-lg shadow-white/50" />
-            <div className="absolute top-1/2 left-4/5 w-1 h-1 bg-white rounded-full animate-ping delay-1500 shadow-lg shadow-white/50" />
-          </div>
-          
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
+          {/* Base gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-red-950/30 via-background/80 to-orange-950/30" />
         </div>
+
+      {/* Hero Section */}
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-transparent overflow-hidden mt-20 z-10">
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -205,7 +177,7 @@ export default function PenetrationTestingPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="text-white">
                 Service Metrics
               </span>
             </h2>
@@ -214,34 +186,34 @@ export default function PenetrationTestingPage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-red-500/20 hover:border-orange-500/40 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-red-500/10 hover:border-orange-500/10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
                 {/* Animated background glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Content */}
                 <div className="relative text-center space-y-3">
                   {/* Icon based on index */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl group-hover:from-red-500/30 group-hover:to-orange-500/30 transition-all duration-300">
-                    {index === 0 && <Target className="w-6 h-6 text-red-400" />}
-                    {index === 1 && <CheckCircle className="w-6 h-6 text-orange-400" />}
-                    {index === 2 && <Clock className="w-6 h-6 text-red-400" />}
-                    {index === 3 && <Star className="w-6 h-6 text-orange-400" />}
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-xl group-hover:from-red-500/10 group-hover:to-orange-500/10 transition-all duration-300">
+                    {index === 0 && <Target className="w-6 h-6 text-white" />}
+                    {index === 1 && <CheckCircle className="w-6 h-6 text-white" />}
+                    {index === 2 && <Clock className="w-6 h-6 text-white" />}
+                    {index === 3 && <Star className="w-6 h-6 text-white" />}
                   </div>
                   
                   {/* Value */}
-                  <div className="text-3xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl font-bold text-white group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                  <div className="text-sm text-white font-medium group-hover:text-white transition-colors duration-300">
                     {stat.label}
                   </div>
                   
                   {/* Progress indicator */}
                   <div className="w-full bg-muted/30 rounded-full h-1 mt-3">
                     <div 
-                      className="bg-gradient-to-r from-red-400 to-orange-400 h-1 rounded-full transition-all duration-1000 ease-out"
+                      className="bg-gradient-to-r from-red-400/10 to-orange-400/10 h-1 rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${85 + index * 5}%` }}
                     />
                   </div>
@@ -368,15 +340,6 @@ export default function PenetrationTestingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection 
-        title="Ready to Secure Your Infrastructure?"
-        description="Get started with our comprehensive penetration testing services and identify vulnerabilities before they become threats."
-        primaryButtonText="Schedule Assessment"
-        secondaryButtonText="Contact Us"
-        secondaryButtonHref="/contact"
-        className="py-16 sm:py-20 lg:py-24"
-      />
     </div>
     </>
   );

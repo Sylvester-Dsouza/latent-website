@@ -128,43 +128,21 @@ export default function SecurityConsultingPage() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-background pt-20">
-      {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 bg-background overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-950/20 via-background to-pink-950/20" />
+      <div className="flex flex-col min-h-screen bg-background relative">
+        {/* Navigation + Hero Background Elements */}
+        <div className="absolute top-0 left-0 right-0 h-[calc(100vh)] z-0">
+          {/* Background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+            style={{ backgroundImage: 'url(/Gradient-bg/bg3.jpg)' }}
+          />
           
-          {/* Animated grid pattern */}
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] animate-pulse" />
-          
-          {/* Floating particles */}
-          <div className="absolute inset-0">
-            {/* Large glowing orbs */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse shadow-2xl shadow-purple-500/10" />
-            <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-pink-500/20 rounded-full blur-2xl animate-pulse delay-1000 shadow-2xl shadow-pink-500/10" />
-            <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-purple-400/20 rounded-full blur-xl animate-pulse delay-500 shadow-2xl shadow-purple-400/10" />
-            
-            {/* Medium particles */}
-            <div className="absolute top-1/5 left-3/4 w-6 h-6 bg-purple-400/50 rounded-full blur-sm animate-bounce delay-200 shadow-lg shadow-purple-400/20" />
-            <div className="absolute top-3/5 left-1/8 w-4 h-4 bg-pink-400/50 rounded-full blur-sm animate-bounce delay-800 shadow-lg shadow-pink-400/20" />
-            <div className="absolute bottom-1/5 right-1/8 w-8 h-8 bg-purple-300/50 rounded-full blur-sm animate-bounce delay-1400 shadow-lg shadow-purple-300/20" />
-            
-            {/* Small floating particles */}
-            <div className="absolute top-1/3 left-1/2 w-3 h-3 bg-purple-400/60 rounded-full animate-bounce delay-300 shadow-md shadow-purple-400/30" />
-            <div className="absolute top-2/3 left-1/5 w-2 h-2 bg-pink-400/60 rounded-full animate-bounce delay-700 shadow-md shadow-pink-400/30" />
-            <div className="absolute top-1/5 right-1/5 w-2 h-2 bg-purple-300/60 rounded-full animate-bounce delay-1200 shadow-md shadow-purple-300/30" />
-            
-            {/* Bright sparkle particles */}
-            <div className="absolute top-1/4 left-3/5 w-1 h-1 bg-white rounded-full animate-ping delay-100 shadow-lg shadow-white/50" />
-            <div className="absolute top-3/4 left-2/5 w-1 h-1 bg-white rounded-full animate-ping delay-1000 shadow-lg shadow-white/50" />
-            <div className="absolute top-1/2 left-4/5 w-1 h-1 bg-white rounded-full animate-ping delay-1500 shadow-lg shadow-white/50" />
-          </div>
-          
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
+          {/* Base gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-950/30 via-background/80 to-pink-950/30" />
         </div>
+
+      {/* Hero Section */}
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-transparent overflow-hidden mt-20 z-10">
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -220,44 +198,44 @@ export default function SecurityConsultingPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="text-white">
                 Service Metrics
               </span>
             </h2>
-            <p className="text-muted-foreground">Consulting excellence indicators</p>
+            <p className="text-muted-foreground">Real-time performance indicators</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-purple-500/20 hover:border-pink-500/40 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+              <Card key={index} className="group relative p-6 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-purple-500/10 hover:border-pink-500/10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
                 {/* Animated background glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Content */}
                 <div className="relative text-center space-y-3">
                   {/* Icon based on index */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300">
-                    {index === 0 && <Users className="w-6 h-6 text-purple-400" />}
-                    {index === 1 && <Award className="w-6 h-6 text-pink-400" />}
-                    {index === 2 && <TrendingUp className="w-6 h-6 text-purple-400" />}
-                    {index === 3 && <BookOpen className="w-6 h-6 text-pink-400" />}
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300">
+                    {index === 0 && <Users className="w-6 h-6 text-white" />}
+                    {index === 1 && <Award className="w-6 h-6 text-white" />}
+                    {index === 2 && <TrendingUp className="w-6 h-6 text-white" />}
+                    {index === 3 && <BookOpen className="w-6 h-6 text-white" />}
                   </div>
                   
                   {/* Value */}
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl font-bold text-white group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                  <div className="text-sm text-white font-medium group-hover:text-white transition-colors duration-300">
                     {stat.label}
                   </div>
                   
                   {/* Progress indicator */}
                   <div className="w-full bg-muted/30 rounded-full h-1 mt-3">
                     <div 
-                      className="bg-gradient-to-r from-purple-400 to-pink-400 h-1 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${88 + index * 3}%` }}
+                      className="bg-gradient-to-r from-purple-400/10 to-pink-400/10 h-1 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${85 + index * 5}%` }}
                     />
                   </div>
                 </div>
@@ -374,15 +352,6 @@ export default function SecurityConsultingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection 
-        title="Ready to Transform Your Security?"
-        description="Get expert security consulting to develop a comprehensive strategy and strengthen your security posture."
-        primaryButtonText="Start Consultation"
-        secondaryButtonText="Contact Expert"
-        secondaryButtonHref="/contact"
-        className="py-20"
-      />
     </div>
     </>
   );

@@ -186,8 +186,8 @@ export default function ContactPage() {
                       <option value="">Select a service</option>
                       <option value="penetration-testing">Penetration Testing</option>
                       <option value="security-consulting">Security Consulting</option>
-                      <option value="managed-security">Managed Security Services</option>
-                      <option value="cloud-security">Cloud Security</option>
+                      <option value="vulnerability-assessment">Vulnerability Assessment</option>
+                      <option value="cybercrime-investigation">Cybercrime Investigation</option>
                       <option value="compliance">Compliance & Audit</option>
                       <option value="incident-response">Incident Response</option>
                       <option value="other">Other</option>

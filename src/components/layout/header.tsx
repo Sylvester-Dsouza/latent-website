@@ -24,23 +24,23 @@ export function Header() {
     },
     {
       title: "Services",
-      description: "Comprehensive IT solutions for your business needs.",
+      description: "Comprehensive cybersecurity solutions for your business needs.",
       items: [
         {
-          title: "Cloud Solutions",
-          href: "/services/cloud",
+          title: "Penetration Testing",
+          href: "/services/penetration-testing",
         },
         {
-          title: "Cybersecurity",
-          href: "/services/security",
+          title: "Security Consulting",
+          href: "/services/security-consulting",
         },
         {
-          title: "IT Consulting",
-          href: "/services/consulting",
+          title: "Vulnerability Assessment",
+          href: "/services/vulnerability-assessment",
         },
         {
-          title: "Support & Maintenance",
-          href: "/services/support",
+          title: "Cybercrime Investigation",
+          href: "/services/cybercrime-investigation",
         },
       ],
     },
@@ -51,10 +51,6 @@ export function Header() {
         {
           title: "About us",
           href: "/about",
-        },
-        {
-          title: "Our Team",
-          href: "/team",
         },
         {
           title: "Careers",

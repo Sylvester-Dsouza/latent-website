@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PulsingParticleBackground } from "@/components/ui/pulsing-particle-background";
-import { CTASection } from "@/components/ui/cta-section";
+
 import { Shield, Lock, Eye, Zap, Users, Award, ArrowRight, Sparkles, AlertTriangle, TrendingUp, Building, CheckCircle, Clock, Globe, HelpCircle, ChevronDown } from "lucide-react";
+import { homeMetadata as metadata } from "./metadata";
+
+export { metadata };
 
 
 export default function Home() {
@@ -20,7 +23,7 @@ export default function Home() {
           {/* Light background image with increased opacity */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
-            style={{ backgroundImage: 'url(/light-bg.jpg)' }}
+            style={{ backgroundImage: 'url(/Gradient-bg/home-bg.jpg)' }}
           />
           
           {/* Very light overlay to blend with theme */}
@@ -957,13 +960,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection 
-        title="Ready to Secure Your Digital Future?"
-        description="Join leading organizations that trust LATENT INFORMATION TECHNOLOGY to protect their most valuable digital assets."
-        secondaryButtonText="Learn More"
-        secondaryButtonHref="/about"
-      />
+
 
       </div>
     </>

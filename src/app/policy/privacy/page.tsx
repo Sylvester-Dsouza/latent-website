@@ -219,7 +219,7 @@ export default function PrivacyPolicyPage() {
           primaryButtonText="Contact Us"
           primaryButtonHref="/contact"
           secondaryButtonText="View Security Policy"
-          secondaryButtonHref="/security-policy"
+          secondaryButtonHref="/policy/security"
           backgroundVariant="muted"
           className="py-20"
         />

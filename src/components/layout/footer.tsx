@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Shield, Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
@@ -23,10 +24,10 @@ const footerSections = [
   {
     title: "Legal",
     links: [
-      { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Service", href: "/terms-of-service" },
-      { name: "Cookie Policy", href: "/cookie-policy" },
-      { name: "Security Policy", href: "/security-policy" },
+      { name: "Privacy Policy", href: "/policy/privacy" },
+    { name: "Terms of Service", href: "/policy/terms" },
+    { name: "Cookie Policy", href: "/policy/cookies" },
+    { name: "Security Policy", href: "/policy/security" },
     ],
   },
 ];
@@ -51,11 +52,19 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-6">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                  <Shield className="h-5 w-5 text-primary-foreground" />
+              <Link href="/" className="flex items-center space-x-3 group">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg">
+                  <Image 
+                    src="/logo.white.webp" 
+                    alt="Latent Logo" 
+                    width={32}
+                    height={32}
+                    className="transition-all duration-300 group-hover:scale-110"
+                  />
                 </div>
-                <span className="text-xl font-bold text-foreground">Latent Security</span>
+                <span className="text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-foreground/80">
+                  Latent
+                </span>
               </Link>
               <p className="mt-4 text-sm text-muted-foreground max-w-md">
                 Protecting your digital assets with cutting-edge cybersecurity solutions. 

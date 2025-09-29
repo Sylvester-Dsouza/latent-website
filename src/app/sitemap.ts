@@ -68,40 +68,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/services/managed-security`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/cloud-security`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
 
     // Policy pages
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/policy/privacy`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/cookie-policy`,
+      url: `${baseUrl}/policy/cookies`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms-of-service`,
+      url: `${baseUrl}/policy/terms`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/security-policy`,
+      url: `${baseUrl}/policy/security`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,

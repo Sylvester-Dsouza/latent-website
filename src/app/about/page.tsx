@@ -17,6 +17,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { CTASection } from "@/components/ui/cta-section";
+import { aboutMetadata as metadata } from "./metadata";
+
+export { metadata };
 
 
 export default function AboutPage() {

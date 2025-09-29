@@ -280,7 +280,7 @@ export default function CookiePolicyPage() {
           primaryButtonText="Contact Us"
           primaryButtonHref="/contact"
           secondaryButtonText="View Privacy Policy"
-          secondaryButtonHref="/privacy-policy"
+          secondaryButtonHref="/policy/privacy"
           backgroundVariant="muted"
           className="py-20"
         />

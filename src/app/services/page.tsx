@@ -28,17 +28,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { CTASection } from "@/components/ui/cta-section";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Cybersecurity Services - Latent Security",
-  description: "Comprehensive cybersecurity services including penetration testing, vulnerability assessments, security consulting, and cybercrime investigation.",
-  openGraph: {
-    title: "Cybersecurity Services - Latent Security",
-    description: "Comprehensive cybersecurity services including penetration testing, vulnerability assessments, security consulting, and cybercrime investigation.",
-    url: "https://latentsecurity.com/services",
-  },
-};
 
 export default function ServicesPage() {
   const [mounted, setMounted] = useState(false);
