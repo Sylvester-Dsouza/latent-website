@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 
 export const servicesMetadata: Metadata = {
-  title: "Cybersecurity Services - Comprehensive Digital Protection | Latent Security",
-  description: "Explore Latent Security's comprehensive cybersecurity services including penetration testing, vulnerability assessment, incident response, security consulting, and cybercrime investigation. Protect your digital future.",
+  title: "Personal Cybersecurity Services | Latent Security",
+  description: "Explore Latent Security's personal cybersecurity services including device cleaning, security testing, protection monitoring, and security education. Protect your digital life.",
   keywords: [
-    "cybersecurity services",
-    "penetration testing",
-    "vulnerability assessment",
-    "incident response",
-    "security consulting",
-    "cybercrime investigation",
+    "personal cybersecurity services",
+    "device cleaning",
+    "security testing",
+    "protection monitoring",
+    "security education",
+    "malware removal",
     "digital forensics",
     "security audits",
     "threat monitoring",
@@ -27,8 +27,8 @@ export const servicesMetadata: Metadata = {
     canonical: "https://latentinfotech.com/services"
   },
   openGraph: {
-    title: "Cybersecurity Services - Comprehensive Digital Protection | Latent Security",
-    description: "Explore Latent Security's comprehensive cybersecurity services including penetration testing, vulnerability assessment, and incident response.",
+    title: "Personal Cybersecurity Services | Latent Security",
+    description: "Explore Latent Security's personal cybersecurity services including device cleaning, security testing, and protection monitoring.",
     url: "https://latentinfotech.com/services",
     siteName: "Latent Security",
     type: "website",
@@ -44,8 +44,8 @@ export const servicesMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cybersecurity Services - Comprehensive Digital Protection | Latent Security",
-    description: "Explore Latent Security's comprehensive cybersecurity services including penetration testing, vulnerability assessment, and incident response.",
+    title: "Personal Cybersecurity Services | Latent Security",
+    description: "Explore Latent Security's personal cybersecurity services including device cleaning, security testing, and protection monitoring.",
     creator: "@latent",
     images: ["https://latentinfotech.com/twitter-services.jpg"]
   },

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CTASection } from "@/components/ui/cta-section";
+
 import { 
   Shield, 
   Eye, 
@@ -16,11 +16,11 @@ import {
   AlertTriangle,
   TrendingUp,
   Award,
-  Zap,
+  BookOpen,
   Lock,
   Globe,
-  Database,
-  Server,
+  GraduationCap,
+  Lightbulb,
   Monitor,
   Activity,
   FileCheck,
@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 
 
-export default function ManagedSecurityPage() {
+export default function SecurityEducationPage() {
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -41,88 +41,88 @@ export default function ManagedSecurityPage() {
 
   const features = [
     {
-      icon: <Settings className="h-8 w-8" />,
-      title: "Preparation and Planning",
-      description: "Establish investigation protocols, legal frameworks, and evidence handling procedures before incidents occur."
+      icon: <BookOpen className="h-8 w-8" />,
+      title: "Password Security",
+      description: "Learn how to create strong passwords, use password managers, and enable two-factor authentication."
     },
     {
       icon: <AlertTriangle className="h-8 w-8" />,
-      title: "Identification and Containment",
-      description: "Quickly identify the scope of the cybercrime and contain the threat to prevent further damage."
-    },
-    {
-      icon: <Database className="h-8 w-8" />,
-      title: "Evidence Collection and Preservation",
-      description: "Collect and preserve digital evidence using forensically sound methods to maintain legal admissibility."
-    },
-    {
-      icon: <Eye className="h-8 w-8" />,
-      title: "Analysis and Attribution",
-      description: "Analyze collected evidence to understand attack methods, identify perpetrators, and determine impact."
+      title: "Phishing Protection",
+      description: "Identify and avoid phishing emails, fake websites, and social engineering attacks."
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Remediation and Recovery",
-      description: "Implement security measures to prevent future incidents and restore normal business operations."
+      title: "Safe Browsing",
+      description: "Best practices for secure internet browsing, avoiding malicious websites and downloads."
     },
     {
-      icon: <FileCheck className="h-8 w-8" />,
-      title: "Reporting and Legal Support",
-      description: "Provide detailed investigation reports and expert testimony to support legal proceedings."
+      icon: <Lock className="h-8 w-8" />,
+      title: "Privacy Settings",
+      description: "Configure privacy settings on social media, apps, and devices to protect your personal information."
+    },
+    {
+      icon: <Monitor className="h-8 w-8" />,
+      title: "Device Security",
+      description: "Secure your devices with proper settings, updates, and security software."
+    },
+    {
+      icon: <Lightbulb className="h-8 w-8" />,
+      title: "Security Awareness",
+      description: "Stay informed about the latest threats and develop good cybersecurity habits."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Preparation and Planning",
-      description: "Establish investigation protocols, legal frameworks, and evidence handling procedures before incidents occur."
+      title: "Assessment & Planning",
+      description: "Evaluate your current security knowledge and create a personalized learning plan."
     },
     {
       step: "02", 
-      title: "Identification and Containment",
-      description: "Quickly identify the scope of the cybercrime and contain the threat to prevent further damage."
+      title: "Interactive Learning",
+      description: "Engage with hands-on tutorials, real-world scenarios, and practical exercises."
     },
     {
       step: "03",
-      title: "Evidence Collection and Analysis",
-      description: "Collect and preserve digital evidence using forensically sound methods, then analyze to understand attack methods."
+      title: "Practice & Application",
+      description: "Apply what you've learned with guided practice sessions and security simulations."
     },
     {
       step: "04",
-      title: "Remediation and Reporting",
-      description: "Implement security measures to prevent future incidents and provide detailed investigation reports."
+      title: "Ongoing Support",
+      description: "Receive continued guidance, updates on new threats, and refresher training."
     }
   ];
 
   const benefits = [
     {
-      icon: <Clock className="h-6 w-6" />,
-      title: "24/7 Protection",
-      description: "Round-the-clock security monitoring and incident response"
+      icon: <GraduationCap className="h-6 w-6" />,
+      title: "Expert Instruction",
+      description: "Learn from certified cybersecurity professionals with real-world experience"
     },
     {
-      icon: <Users className="h-6 w-6" />,
-      title: "Expert Team",
-      description: "Access to certified security professionals and specialists"
+      icon: <BookOpen className="h-6 w-6" />,
+      title: "Practical Learning",
+      description: "Hands-on training with real scenarios and interactive exercises"
     },
     {
       icon: <TrendingUp className="h-6 w-6" />,
-      title: "Scalable Solutions",
-      description: "Security services that grow with your business needs"
+      title: "Progressive Curriculum",
+      description: "Start with basics and advance to more complex security concepts"
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Cost Effective",
-      description: "Reduce security costs while improving protection levels"
+      title: "Certification Ready",
+      description: "Prepare for industry certifications and validate your knowledge"
     }
   ];
 
   const stats = [
-    { value: "24/7", label: "Monitoring Coverage" },
-    { value: "99.9%", label: "Uptime Guarantee" },
-    { value: "15min", label: "Response Time" },
-    { value: "100%", label: "Threat Detection" }
+    { value: "500+", label: "Students Trained" },
+    { value: "95%", label: "Completion Rate" },
+    { value: "20+", label: "Course Modules" },
+    { value: "24/7", label: "Learning Support" }
   ];
 
   return (
@@ -147,34 +147,34 @@ export default function ManagedSecurityPage() {
           <div className="text-center">
             {/* Badge */}
             <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-medium">
-              <Shield className="w-4 h-4 mr-2" />
-              Managed Security Services 🛡️
+              <GraduationCap className="w-4 h-4 mr-2" />
+              Cybersecurity Education 🎓
             </Badge>
 
             {/* Main Heading */}
             <h1 className="font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl mb-6">
               <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
-                Managed Security
+                Security Education
               </span>
-              <br />
+              <br className="sm:hidden" />
               <span className="text-foreground">
-                Operations
+                <span className="hidden sm:inline"> </span>& Training
               </span>
             </h1>
             
             {/* Subtitle */}
             <p className="mx-auto max-w-3xl text-lg sm:text-xl text-muted-foreground mb-8">
-              Comprehensive managed security services with 24/7 monitoring, threat detection, and expert incident response.
+              Learn essential cybersecurity skills to protect yourself online with expert-led training and practical exercises.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Start Security Assessment
+                Start Learning
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-3 rounded-lg font-semibold border-green-500/20 hover:border-green-500/40 hover:bg-green-500/5 transition-all duration-300">
-                View Service Plans
+                View Courses
               </Button>
             </div>
           </div>
@@ -198,10 +198,10 @@ export default function ManagedSecurityPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
               <span className="text-white">
-                Service Metrics
+                Learning Metrics
               </span>
             </h2>
-            <p className="text-muted-foreground">Managed security performance indicators</p>
+            <p className="text-muted-foreground">Security education program statistics</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -214,10 +214,10 @@ export default function ManagedSecurityPage() {
                 <div className="relative text-center space-y-3">
                   {/* Icon based on index */}
                   <div className="inline-flex items-center justify-center w-12 h-12 mb-2 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl group-hover:from-green-500/10 group-hover:to-emerald-500/10 transition-all duration-300">
-                    {index === 0 && <Monitor className="w-6 h-6 text-white" />}
+                    {index === 0 && <Users className="w-6 h-6 text-white" />}
                     {index === 1 && <TrendingUp className="w-6 h-6 text-white" />}
-                    {index === 2 && <Clock className="w-6 h-6 text-white" />}
-                    {index === 3 && <Shield className="w-6 h-6 text-white" />}
+                    {index === 2 && <BookOpen className="w-6 h-6 text-white" />}
+                    {index === 3 && <Clock className="w-6 h-6 text-white" />}
                   </div>
                   
                   {/* Value */}
@@ -253,11 +253,11 @@ export default function ManagedSecurityPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Comprehensive Security Services
+                Essential Security Topics
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Complete managed security operations designed to protect your organization around the clock.
+              Learn the fundamental cybersecurity skills you need to stay safe online and protect your digital life.
             </p>
           </div>
 
@@ -291,11 +291,11 @@ export default function ManagedSecurityPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Our Service Process
+                Our Learning Process
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A systematic approach to implementing and managing your security operations.
+              A structured approach to building your cybersecurity knowledge and skills step by step.
             </p>
           </div>
 
@@ -323,11 +323,11 @@ export default function ManagedSecurityPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Why Choose Managed Security
+                Why Choose Our Training
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Experience the benefits of professional managed security operations.
+              Professional cybersecurity education with expert guidance and practical skills you can use immediately.
             </p>
           </div>
 

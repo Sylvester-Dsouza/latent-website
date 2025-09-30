@@ -184,12 +184,12 @@ export default function ContactPage() {
                       value={formData.service}
                     >
                       <option value="">Select a service</option>
-                      <option value="penetration-testing">Penetration Testing</option>
-                      <option value="security-consulting">Security Consulting</option>
-                      <option value="vulnerability-assessment">Vulnerability Assessment</option>
-                      <option value="cybercrime-investigation">Cybercrime Investigation</option>
-                      <option value="compliance">Compliance & Audit</option>
-                      <option value="incident-response">Incident Response</option>
+                      <option value="device-cleaning">Device Cleaning</option>
+                      <option value="security-testing">Security Testing</option>
+                      <option value="protection-monitoring">Protection & Monitoring</option>
+                      <option value="security-education">Security Education</option>
+                      <option value="emergency-recovery">Emergency Device Recovery</option>
+                      <option value="identity-protection">Identity Theft Protection</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

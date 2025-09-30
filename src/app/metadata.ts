@@ -1,24 +1,21 @@
 import { Metadata } from "next";
 
 export const homeMetadata: Metadata = {
-  title: "Latent Security - Leading Cybersecurity Solutions & Digital Forensics",
-  description: "Defend your digital future with Latent Security's comprehensive cybersecurity services. Trusted by 500+ organizations with 24/7 monitoring, penetration testing, incident response, and compliance solutions.",
+  title: "Latent Security - Protect Your Digital Life",
+  description: "Protect your digital life with Latent Security's personal cybersecurity services. Expert device cleaning, security testing, protection monitoring, and security education for individuals and families.",
   keywords: [
-    "cybersecurity solutions",
+    "personal cybersecurity",
+    "digital security",
+    "device cleaning",
+    "malware removal",
+    "security testing",
+    "protection monitoring",
+    "security education",
+    "digital protection",
+    "personal security",
+    "device security",
     "digital forensics",
-    "penetration testing", 
-    "incident response",
-    "threat monitoring",
-    "security audits",
-    "compliance",
-    "cybersecurity company",
-    "network security",
-    "data protection",
-    "cyber threat protection",
-    "security consulting",
-    "vulnerability assessment",
-    "SOC services",
-    "cybercrime investigation"
+    "identity protection"
   ],
   authors: [{ name: "Latent Security" }],
   creator: "Latent Security",

@@ -7,10 +7,10 @@ const footerSections = [
   {
     title: "Services",
     links: [
-      { name: "Penetration Testing", href: "/services/penetration-testing" },
-      { name: "Vulnerability Assessment", href: "/services/vulnerability-assessment" },
-      { name: "Security Consulting", href: "/services/security-consulting" },
-      { name: "Cybercrime Investigation", href: "/services/cybercrime-investigation" },
+      { name: "Device Cleaning", href: "/services/device-cleaning" },
+      { name: "Security Testing", href: "/services/security-testing" },
+      { name: "Protection & Monitoring", href: "/services/protection-monitoring" },
+      { name: "Security Education", href: "/services/security-education" },
     ],
   },
   {

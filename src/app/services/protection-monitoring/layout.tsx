@@ -1,6 +1,6 @@
-import { vulnerabilityAssessmentMetadata as metadata } from "./metadata";
+import { protectionMonitoringMetadata } from "./metadata";
 
-export { metadata };
+export const metadata = protectionMonitoringMetadata;
 
 export default function VulnerabilityAssessmentLayout({
   children,

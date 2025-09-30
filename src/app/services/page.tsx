@@ -27,7 +27,7 @@ import {
   Award
 } from "lucide-react";
 import Link from "next/link";
-import { CTASection } from "@/components/ui/cta-section";
+
 
 export default function ServicesPage() {
   const [mounted, setMounted] = useState(false);
@@ -43,146 +43,134 @@ export default function ServicesPage() {
 
   const mainServices = [
     {
-      id: "penetration-testing",
-      title: "Penetration Testing",
-      subtitle: "Controlled Simulated Attacks",
-      description: "A controlled, simulated attack to evaluate the security of IT infrastructure, applications, or human processes by exploiting vulnerabilities to assess their real-world impact.",
+      id: "device-cleaning",
+      title: "Device Cleaning & Recovery",
+      subtitle: "Remove Malware & Restore Your Device",
+      description: "Your phone, tablet, or computer has been hacked? We'll completely clean it up and restore it to a secure state, removing all malware, scammer apps, and malicious software.",
       icon: Shield,
       gradient: "from-primary/20 to-primary/10",
       features: [
-        "Planning and scoping with defined goals and rules of engagement",
-        "Reconnaissance using WHOIS, Shodan, and social engineering",
-        "Vulnerability identification with Nmap, Burp Suite, and Metasploit",
-        "Active exploitation to gain unauthorized access"
+        "Complete malware and virus removal from all devices",
+        "Scammer app detection and removal",
+        "System restoration to clean, secure state",
+        "Data recovery for affected files and photos"
       ],
       benefits: [
-        "Identify exploitable weaknesses before attackers do",
-        "Assess real-world impact of security vulnerabilities",
-        "Compliance with PCI-DSS, HIPAA, and industry standards",
-        "Detailed attack paths and remediation guidance"
+        "Get your device working safely again",
+        "Remove all traces of hacker access",
+        "Recover important files and data",
+        "Peace of mind with clean device"
       ],
       stats: [
-        { value: "500+", label: "Tests Completed" },
-        { value: "99.9%", label: "Accuracy Rate" },
-        { value: "24h", label: "Report Delivery" },
-        { value: "100%", label: "Compliance Ready" }
+        { value: "500+", label: "Devices Cleaned" },
+        { value: "99.9%", label: "Malware Removed" },
+        { value: "24h", label: "Turnaround Time" },
+        { value: "100%", label: "Success Rate" }
       ]
     },
     {
-      id: "vulnerability-assessment",
-      title: "Vulnerability Assessment",
-      subtitle: "Comprehensive Security Scanning",
-      description: "Systematic identification and evaluation of security vulnerabilities in systems, networks, and applications using automated tools and manual techniques.",
+      id: "security-testing",
+      title: "Security Testing & Analysis",
+      subtitle: "Check If Your Device Is Really Safe",
+      description: "We thoroughly test your device to make sure it's completely secure and check what personal information may have been stolen or compromised.",
       icon: Search,
       gradient: "from-primary/20 to-primary/10",
       features: [
-        "Planning and scoping with stakeholder alignment",
-        "Discovery and scanning using Nessus, Qualys, OpenVAS",
-        "Analysis and prioritization using CVSS scores",
-        "Detailed reporting with risk ratings and remediation"
+        "Deep scan for hidden threats and backdoors",
+        "Privacy audit to check exposed personal data",
+        "Vulnerability assessment of device weaknesses",
+        "Account security review for compromised logins"
       ],
       benefits: [
-        "Identify vulnerabilities before exploitation",
-        "Prioritize risks based on business impact",
-        "Compliance with PCI-DSS, GDPR requirements",
-        "Continuous security posture improvement"
+        "Know exactly what was compromised",
+        "Find hidden threats others miss",
+        "Understand how the breach happened",
+        "Get clear next steps for protection"
       ],
       stats: [
-        { value: "10,000+", label: "Vulnerabilities Found" },
-        { value: "95%", label: "Risk Reduction" },
-        { value: "48h", label: "Report Delivery" },
-        { value: "100%", label: "Remediation Success" }
+        { value: "1,000+", label: "Devices Tested" },
+        { value: "95%", label: "Hidden Threats Found" },
+        { value: "48h", label: "Analysis Complete" },
+        { value: "100%", label: "Detailed Reports" }
       ]
     },
     {
-      id: "cybercrime-investigation",
-      title: "Cybercrime Investigation",
-      subtitle: "Digital Forensics & Investigation",
-      description: "Comprehensive investigation of cyber incidents using advanced digital forensics techniques to identify perpetrators and gather evidence for legal proceedings.",
-      icon: Search,
+      id: "protection-monitoring",
+      title: "Ongoing Protection & Monitoring",
+      subtitle: "Keep Your Devices Safe Long-Term",
+      description: "Set up proper security software and get regular check-ups to make sure your devices stay protected from future attacks and scams.",
+      icon: Eye,
       gradient: "from-primary/20 to-primary/10",
       features: [
-        "Planning and preparation with legal compliance",
-        "Evidence collection and preservation using forensic tools",
-        "Analysis and examination of digital artifacts",
-        "Detailed reporting with chain of custody documentation"
+        "Professional security software setup and configuration",
+        "Regular health checks and security scans",
+        "Real-time monitoring for new threats",
+        "Emergency support when you need help fast"
       ],
       benefits: [
-        "Legal-grade evidence collection",
-        "Expert forensic analysis and reporting",
-        "Support for criminal and civil proceedings",
-        "Incident attribution and threat actor identification"
+        "Stay protected from future attacks",
+        "Get help immediately when needed",
+        "Learn how to spot and avoid scams",
+        "Regular peace of mind check-ups"
       ],
       stats: [
-        { value: "200+", label: "Cases Investigated" },
-        { value: "98%", label: "Evidence Recovery" },
-        { value: "72h", label: "Initial Analysis" },
-        { value: "100%", label: "Court Admissible" }
+        { value: "300+", label: "Protected Devices" },
+        { value: "98%", label: "Attack Prevention" },
+        { value: "24/7", label: "Emergency Support" },
+        { value: "100%", label: "Client Satisfaction" }
       ]
     },
     {
-      id: "security-consulting",
-      title: "Security Consulting",
-      subtitle: "Strategic Security Advisory",
-      description: "Comprehensive cybersecurity consulting services providing strategic guidance, risk assessment, and tailored security solutions to strengthen your organization's security posture.",
+      id: "security-education",
+      title: "Security Education & Support",
+      subtitle: "Learn How to Stay Safe Online",
+      description: "Get personalized training on how to recognize scams, protect your personal information, and keep your devices secure from future attacks.",
       icon: Users,
       gradient: "from-primary/20 to-primary/10",
       features: [
-        "Planning and assessment with stakeholder engagement",
-        "Analysis and strategy development using industry frameworks",
-        "Implementation support with project management",
-        "Monitoring and optimization with continuous improvement"
+        "One-on-one security training sessions",
+        "Scam recognition and prevention education",
+        "Safe browsing and app installation guidance",
+        "Personal security plan development"
       ],
       benefits: [
-        "Strategic security roadmap development",
-        "Risk-based security investment decisions",
-        "Regulatory compliance achievement",
-        "Enhanced security culture and awareness"
+        "Avoid falling for scams in the future",
+        "Understand how to protect yourself",
+        "Get personalized security advice",
+        "Build confidence using technology safely"
       ],
       stats: [
-        { value: "150+", label: "Organizations Advised" },
-        { value: "98%", label: "Compliance Success" },
-        { value: "40+", label: "Security Frameworks" },
-        { value: "85%", label: "Risk Reduction" }
+        { value: "200+", label: "People Trained" },
+        { value: "90%", label: "Scam Avoidance" },
+        { value: "1-on-1", label: "Personal Training" },
+        { value: "100%", label: "Easy to Understand" }
       ]
     }
   ];
 
   const additionalServices = [
     {
-      title: "Cloud Security Assessment",
-      description: "Comprehensive evaluation of cloud infrastructure security across AWS, Azure, and GCP platforms.",
-      icon: Cloud,
-      color: "text-primary"
-    },
-    {
-      title: "Security Auditing",
-      description: "Thorough evaluation of security controls and compliance with industry standards and frameworks.",
-      icon: FileCheck,
-      color: "text-primary"
-    },
-    {
-      title: "Incident Response",
-      description: "24/7 rapid response and recovery services for security incidents and data breaches.",
+      title: "Emergency Device Recovery",
+      description: "Immediate help when your device has been compromised or you suspect unauthorized access.",
       icon: AlertTriangle,
       color: "text-primary"
     },
     {
-      title: "Security Training",
-      description: "Comprehensive security awareness training programs and phishing simulation exercises.",
+      title: "Identity Theft Protection",
+      description: "Check if your personal information has been stolen and help secure your online accounts.",
+      icon: Lock,
+      color: "text-primary"
+    },
+    {
+      title: "Family Device Security",
+      description: "Protect all family devices including phones, tablets, and computers with comprehensive security.",
+      icon: Users,
+      color: "text-primary"
+    },
+    {
+      title: "Senior Citizen Support",
+      description: "Specialized support for older adults who are often targeted by scammers and need extra help.",
       icon: Award,
-      color: "text-primary"
-    },
-    {
-      title: "Risk Management",
-      description: "Strategic risk assessment and management services using quantitative and qualitative methods.",
-      icon: Target,
-      color: "text-primary"
-    },
-    {
-      title: "Compliance Services",
-      description: "Ensure compliance with GDPR, PCI-DSS, ISO 27001, SOX, and other regulatory requirements.",
-      icon: CheckCircle,
       color: "text-primary"
     }
   ];
@@ -218,17 +206,17 @@ export default function ServicesPage() {
         
         <div className="relative max-w-4xl mx-auto text-center">
           <Badge variant="outline" className="mb-6 border-primary/20 bg-primary/5 text-primary">
-            <Shield className="w-4 h-4 mr-2" />
-            Cybersecurity Services
+            <Smartphone className="w-4 h-4 mr-2" />
+            Device Security Help
           </Badge>
           
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
-            Comprehensive Security Solutions
+            Your Device Has Been Hacked?
           </h1>
           
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Protect your digital assets with our industry-leading cybersecurity services. 
-            From penetration testing to managed security operations, we provide end-to-end protection.
+            We help individuals whose phones, tablets, or computers have been compromised by hackers or scammers. 
+            Get your device cleaned, secured, and protected from future attacks.
           </p>
         </div>
       </section>
@@ -347,10 +335,10 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold mb-3">
-              Additional Security Services
+              Additional Support Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Specialized security services to complement your comprehensive security strategy.
+              Extra help and specialized support for specific situations and ongoing protection needs.
             </p>
           </div>
 
@@ -381,8 +369,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection />
+
     </div>
   );
 }

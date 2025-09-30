@@ -1,4 +1,4 @@
-import { penetrationTestingMetadata as metadata } from "./metadata";
+import { deviceCleaningMetadata as metadata } from "./metadata";
 
 export { metadata };
 

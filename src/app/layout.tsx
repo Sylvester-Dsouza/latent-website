@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://latentsecurity.com"),
   title: "Latent Security - Cybersecurity Solutions",
   description: "Protecting your digital assets with cutting-edge cybersecurity solutions. Comprehensive security services to keep your business safe from evolving threats.",
-  keywords: "cybersecurity, security audits, penetration testing, compliance, incident response, vulnerability assessment, security consulting, cybercrime investigation",
+  keywords: "personal cybersecurity, device cleaning, security testing, protection monitoring, security education, malware removal, digital protection, device security",
   authors: [{ name: "Latent Security" }],
   creator: "Latent Security",
   publisher: "Latent Security",

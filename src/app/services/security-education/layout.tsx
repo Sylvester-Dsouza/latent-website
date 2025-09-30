@@ -1,6 +1,6 @@
-import { cybercrimeInvestigationMetadata as metadata } from "./metadata";
+import { securityEducationMetadata } from "./metadata";
 
-export { metadata };
+export const metadata = securityEducationMetadata;
 
 export default function CybercrimeInvestigationLayout({
   children,

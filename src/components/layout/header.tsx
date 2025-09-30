@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -24,23 +24,23 @@ export function Header() {
     },
     {
       title: "Services",
-      description: "Comprehensive cybersecurity solutions for your business needs.",
+      description: "Personal cybersecurity services to protect your digital life.",
       items: [
         {
-          title: "Penetration Testing",
-          href: "/services/penetration-testing",
+          title: "Device Cleaning",
+          href: "/services/device-cleaning",
         },
         {
-          title: "Security Consulting",
-          href: "/services/security-consulting",
+          title: "Security Testing",
+          href: "/services/security-testing",
         },
         {
-          title: "Vulnerability Assessment",
-          href: "/services/vulnerability-assessment",
+          title: "Protection & Monitoring",
+          href: "/services/protection-monitoring",
         },
         {
-          title: "Cybercrime Investigation",
-          href: "/services/cybercrime-investigation",
+          title: "Security Education",
+          href: "/services/security-education",
         },
       ],
     },
@@ -65,31 +65,60 @@ export function Header() {
   ];
 
   const [isOpen, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="w-full z-50 fixed top-0 left-0 bg-transparent backdrop-blur-sm">
-      <div className="container relative mx-auto min-h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo - Left */}
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg">
-            <Image 
-              src="/logo.white.webp" 
-              alt="Latent Logo" 
-              width={32}
-              height={32}
-              className="transition-all duration-300 group-hover:scale-110"
-            />
-          </div>
-          <span className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-white/80">
-            Latent
-          </span>
-        </Link>
+    <header className={`w-full z-50 fixed left-0 transition-all duration-500 ease-in-out ${
+      isScrolled 
+        ? 'top-4' 
+        : 'top-0'
+    }`}>
+      <div className={`mx-auto grid grid-cols-3 items-center transition-all duration-500 ease-in-out ${
+         isScrolled 
+           ? 'max-w-4xl bg-background/20 backdrop-blur-md border border-border/30 shadow-lg rounded-2xl px-6 py-3 min-h-14' 
+           : 'container bg-transparent backdrop-blur-sm px-4 sm:px-6 lg:px-8 min-h-20'
+       }`}>
+         {/* Logo - Left */}
+         <div className="flex justify-start">
+           <Link href="/" className="flex items-center space-x-2 group">
+             <div className={`flex items-center justify-center rounded-lg transition-all duration-500 ${
+               isScrolled ? 'h-7 w-7' : 'h-10 w-10'
+             }`}>
+               <Image 
+                 src="/logo.white.webp" 
+                 alt="Latent Logo" 
+                 width={isScrolled ? 20 : 32}
+                 height={isScrolled ? 20 : 32}
+                 className="transition-all duration-500 group-hover:scale-110"
+               />
+             </div>
+             <span className={`font-bold text-white transition-all duration-500 group-hover:text-white/80 ${
+               isScrolled ? 'text-base' : 'text-xl'
+             }`}>
+               Latent
+             </span>
+           </Link>
+         </div>
 
         {/* Desktop Navigation - Center */}
-        <div className="hidden lg:flex justify-center flex-1">
+         <div className={`hidden lg:flex justify-center transition-all duration-500 ${
+           isScrolled ? 'scale-95' : 'scale-100'
+         }`}>
           <NavigationMenu className="flex justify-center items-center">
-            <NavigationMenuList className="flex justify-center gap-2 flex-row">
+            <NavigationMenuList className={`flex justify-center flex-row transition-all duration-500 ${
+              isScrolled ? 'gap-1' : 'gap-2'
+            }`}>
               {navigationItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
@@ -97,20 +126,23 @@ export function Header() {
                       <Link 
                         href={item.href}
                         className={`
-                          px-4 py-2 rounded-md font-medium text-sm cursor-pointer
-                          transition-all duration-300 ease-in-out
-                          ${pathname === item.href 
-                            ? 'text-white' 
-                            : 'text-white/60 hover:text-white'
-                          }
-                        `}
+                           rounded-md font-medium cursor-pointer
+                           transition-all duration-300 ease-in-out
+                           ${isScrolled ? 'px-3 py-1.5 text-sm' : 'px-4 py-2 text-sm'}
+                           ${pathname === item.href 
+                             ? 'text-white' 
+                             : 'text-white/60 hover:text-white'
+                           }
+                         `}
                       >
                         {item.title}
                       </Link>
                     </NavigationMenuLink>
                   ) : (
                     <>
-                      <NavigationMenuTrigger className="font-medium text-sm transition-all duration-300 text-white/60 hover:text-white !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent data-[state=open]:text-white data-[state=open]:!bg-transparent">
+                      <NavigationMenuTrigger className={`font-medium transition-all duration-300 text-white/60 hover:text-white !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent data-[state=open]:text-white data-[state=open]:!bg-transparent ${
+                         isScrolled ? 'text-sm' : 'text-sm'
+                       }`}>
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="!w-[450px] p-4 backdrop-blur-xl border border-border">
@@ -153,19 +185,28 @@ export function Header() {
         </div>
 
         {/* CTA Buttons - Right */}
-        <div className="hidden lg:flex items-center space-x-4">
+         <div className={`hidden lg:flex justify-end items-center transition-all duration-500 ${
+           isScrolled ? 'space-x-2' : 'space-x-4'
+         }`}>
           <Button 
             variant="ghost" 
             asChild
-            className="transition-all duration-300"
+            size={isScrolled ? "sm" : "default"}
+            className="transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
           >
             <Link href="/book-a-call">Book a call</Link>
           </Button>
           <Button 
             asChild
-            className="transition-all duration-300 hover:scale-105 shadow-lg"
+            size={isScrolled ? "sm" : "default"}
+            className="transition-all duration-300 hover:scale-105 shadow-lg bg-white text-black hover:bg-white/90"
           >
-            <Link href="/get-started">Get started</Link>
+            <Link href="/get-started" className="flex items-center">
+              Get started
+              <MoveRight className={`ml-2 transition-all duration-500 ${
+                isScrolled ? 'h-3 w-3' : 'h-4 w-4'
+              }`} />
+            </Link>
           </Button>
         </div>
 

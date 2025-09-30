@@ -1,6 +1,6 @@
-import { securityConsultingMetadata as metadata } from "./metadata";
+import { securityTestingMetadata } from "./metadata";
 
-export { metadata };
+export const metadata = securityTestingMetadata;
 
 export default function SecurityConsultingLayout({
   children,
